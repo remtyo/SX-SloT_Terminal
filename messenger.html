@@ -38,7 +38,7 @@
     .form_auth_block {max-width: 800px; max-height: 500px; margin: 0 auto; 
         background-color: white; box-shadow: 2px 2px 12px 1px rgba(140,140,140,.5); 
         border-radius: 4px;color: #0e7c7b;}
-    .tle_fill{ height: 60px; display: inline-block;  width: 100%;  text-align: justify;  }
+    .messenge_fill{ height: 60px; display: inline-block;  width: 100%;  text-align: justify;  }
     .hidden { display: none; }
     html {font-family: sans-serif; display: inline-block; text-align: center;}
     p {  font-size: 1.2rem;}
@@ -68,13 +68,13 @@
         <div class="cards">
           <div class="card stats">
             <h4 class="stats-header">Add satellite</h4>
-            <label>TLE:</label>
-            <textarea id="tle" type="text"  class="tle_fill" placeholder="callsign and tle" required ></textarea>
+            <label>Messenge:</label>
+            <textarea id="messenge" type="text"  class="messenge_fill" placeholder="messenge" required ></textarea>
             <br>
-            <button id="add_tle_btn" class="form_auth_button">Add</button>
-            <button id="save_tle_btn" >Save all tle records</button>
-            <button id="clear_all_tle_btn" >Clear all tle records</button>
-            <div id = tle_error_log></div>
+            <button id="send_messenge_btn" class="form_auth_button">Send</button>
+            <button id="send_file_messenge_btn" >Send file</button>
+            <button id="clear screen_messenge_btn" >Clear screen</button>
+            <div id = messenge_error_log></div>
           </div>
           
         </div>
