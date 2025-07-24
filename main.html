@@ -28,12 +28,11 @@
     .card.version { color: #0e7c7b;  grid-column: span 1; }
     .card.uniq_id { color: #0e7c7b;  grid-column: span 1; }
     .card.stats { color: #0e7c7b; text-align: left; padding: 8px; grid-column: 1 / -1;}
-    .stats-header { text-align: center; margin: 10px; }
     .stats-text { margin: 2px; }
     .cardmini1{ font-size: 2.0rem; margin: 10px;  text-align: center;}
     .cardmini2{ font-size: 2.0rem; margin: 10px;  text-align: center;}
     .cardmini3{ font-size: 2.0rem; margin: 10px;  text-align: center;}
-    .stats-header{ font-size: 2.0rem; margin: 10px;  text-align: center;}
+    .stats-header{ font-size: 1.5rem; margin: 10px;  text-align: center;}
     h5{ font-size: 1.5rem; margin: 10px; }
     label{ margin: 5px; }
     input{ margin: 5px; }
@@ -81,16 +80,19 @@
             <h4 class="cardmini3">ID</h4><p class="reading"><span id="terminal_id"></span></p>
           </div>
           <div class="card stats" id="terminal_stats">
-            <h4 class="stats-header">Terminal Statistics</h4>
+            <details>
+            <summary><h4 class="stats-header">Terminal Statistics</h4></summary>
             <p class="stats-text">Uptime (ms): <span></span></p>
             <p class="stats-text">Terminal time: <span></span></p>
             <p class="stats-text">Messages waiting: <span></span></p>
             <p class="stats-text">Total transmitted messages: <span></span></p>
             <p class="stats-text">Dropped messages count: <span></span></p>
             <!--<p class="stats-text">LLA: <span></span></p>-->
+            </details>
           </div>
           <div class="card stats" id="terminal_planner_info">
-            <h4 class="stats-header">Satellite pass info</h4>
+            <details>
+            <summary><h4 class="stats-header">Satellite pass info</h4></summary>
             <p class="stats-text">Satellite name: <span></span></p>
             <p class="stats-text">Satellite callsign: <span></span></p>
             <p class="stats-text">Frequency: <span></span></p>
@@ -98,6 +100,7 @@
             <p class="stats-text">Max elevation: <span></span></p>
             <p class="stats-text">Elevation: <span></span></p>
             <!--<p class="stats-text">Doppler frequency: <span></span></p>-->
+            </details>
           </div>
             
           </div>

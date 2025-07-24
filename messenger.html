@@ -28,9 +28,8 @@
     .card.version { color: #0e7c7b;  grid-column: span 1; }
     .card.uniq_id { color: #0e7c7b;  grid-column: span 1; }
     .card.stats { color: #0e7c7b; text-align: left; padding: 8px; grid-column: 1 / -1;}
-    .stats-header { text-align: center; margin: 10px; }
     .stats-text { margin: 2px; }
-    .stats-header{ font-size: 2.0rem; margin: 10px;  text-align: center;}
+    .stats-header{ font-size: 1.5rem; margin: 10px;  text-align: center;}
     h5{ font-size: 1.5rem; margin: 10px; }
     label{ margin: 5px; }
     input{ margin: 5px; }
@@ -66,8 +65,11 @@
 
     <div class="content">
         <div class="cards">
+          
+            
           <div class="card stats">
-            <h4 class="stats-header">Add satellite</h4>
+            <details>
+            <summary><h4 class="stats-header">Add satellite</h4></summary>
             <label>Messenge:</label>
             <textarea id="messenge" type="text"  class="messenge_fill" placeholder="messenge" required ></textarea>
             <br>
@@ -75,6 +77,7 @@
             <button id="send_file_messenge_btn" >Send file</button>
             <button id="clear screen_messenge_btn" >Clear screen</button>
             <div id = messenge_error_log></div>
+            </details>
           </div>
           
         </div>
