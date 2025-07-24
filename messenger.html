@@ -9,7 +9,7 @@
     .topnav-img { grid-column: span 1; height: 100px; justify-content: left;}
     .topnav-text { text-align: center; color: white; }
     .chapter  { padding: 1em;   align-content: center; max-width: 800px; margin: 0 auto; display: grid;
-       grid-gap: 2rem; grid-template-columns: repeat(3, minmax(50px, 75px));
+       grid-gap: 2rem; grid-template-columns: repeat(3, minmax(50px, 100px));
        }
     .chapter1 { color: #0e7c7b; grid-column: span 1; }
     .chapter2 { color: #0e7c7b; grid-column: span 1; }
@@ -17,6 +17,31 @@
     .chapter1 { background-color: white; padding: 0 20; box-shadow: 2px 2px 12px 1px rgba(140,140,140,.5); border: 2px; border-radius: 8px;}
     .chapter2 { background-color: white; padding: 0 13; box-shadow: 2px 2px 12px 1px rgba(140,140,140,.5); border: 2px; border-radius: 8px;}
     .chapter3 { background-color: white; padding: 0 2; box-shadow: 2px 2px 12px 1px rgba(140,140,140,.5); border: 2px; border-radius: 8px;}
+
+    .content { padding: 20px; }
+    .card { background-color: white; box-shadow: 2px 2px 12px 1px rgba(140,140,140,.5); border: 2px; border-radius: 8px;}
+    .cards { padding: 1em; justify-content: center; align-content: center; max-width: 800px; margin: 0 auto; display: grid;
+       grid-gap: 2rem; grid-template-columns: repeat(3, minmax(200px, 1fr));
+       grid-auto-rows: minmax(100px, auto); }
+    .reading { font-size: 2.4 rem; }
+    .card.mac { color: #0e7c7b; grid-column: span 1; }
+    .card.version { color: #0e7c7b;  grid-column: span 1; }
+    .card.uniq_id { color: #0e7c7b;  grid-column: span 1; }
+    .card.stats { color: #0e7c7b; text-align: left; padding: 8px; grid-column: 1 / -1;}
+    .stats-header { text-align: center; margin: 10px; }
+    .stats-text { margin: 2px; }
+    .stats-header{ font-size: 2.0rem; margin: 10px;  text-align: center;}
+    h5{ font-size: 1.5rem; margin: 10px; }
+    label{ margin: 5px; }
+    input{ margin: 5px; }
+    select{ margin: 5px; }
+    .form_auth_block {max-width: 800px; max-height: 500px; margin: 0 auto; 
+        background-color: white; box-shadow: 2px 2px 12px 1px rgba(140,140,140,.5); 
+        border-radius: 4px;color: #0e7c7b;}
+    .tle_fill{ height: 60px; display: inline-block;  width: 100%;  text-align: justify;  }
+    .hidden { display: none; }
+    html {font-family: sans-serif; display: inline-block; text-align: center;}
+    p {  font-size: 1.2rem;}
 
     </style>
 </head>
@@ -38,5 +63,21 @@
             <A href="messenger.html"><h4>messenger</h4></A>
         </div>
     </div>
+
+    <div class="content">
+        <div class="cards">
+          <div class="card stats">
+            <h4 class="stats-header">Add satellite</h4>
+            <label>TLE:</label>
+            <textarea id="tle" type="text"  class="tle_fill" placeholder="callsign and tle" required ></textarea>
+            <br>
+            <button id="add_tle_btn" class="form_auth_button">Add</button>
+            <button id="save_tle_btn" >Save all tle records</button>
+            <button id="clear_all_tle_btn" >Clear all tle records</button>
+            <div id = tle_error_log></div>
+          </div>
+          
+        </div>
+      </div>
 </body>
 </html>	
