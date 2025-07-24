@@ -107,6 +107,16 @@
             <button id="reboot">Reboot</button>
             <div id = sets_error_log></div>
           </div>
+          <div class="card stats">
+            <h4 class="stats-header">Add satellite</h4>
+            <label>TLE:</label>
+            <textarea id="tle" type="text"  class="tle_fill" placeholder="callsign and tle" required ></textarea>
+            <br>
+            <button id="add_tle_btn" class="form_auth_button">Add</button>
+            <button id="save_tle_btn" >Save all tle records</button>
+            <button id="clear_all_tle_btn" >Clear all tle records</button>
+            <div id = tle_error_log></div>
+          </div>
         </div>
       </div>
 </body>
