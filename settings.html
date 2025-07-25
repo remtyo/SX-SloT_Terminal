@@ -83,29 +83,41 @@ function toggleFields() {
           <div class="card stats" id="terminal_wifi_settings">
             <details>
             <summary><h4 class="stats-header">Terminal Wi-Fi settings</h4></summary>
+              <div style="display: flex; justify-content: space-around;">
               <label for="mode">Mode: </label>
               <select id="mode" name="mode" onchange="toggleFields()">
                 <option value="client">Client</option>
                 <option value="access_point">Station</option>
               </select>
+              </div>
               <br>
               <div id="client-fields">
+                <div style="display: flex; justify-content: space-around;">
                 <label for="client-ssid">Client SSID name: </label>
                 <input type="text" id="client-ssid" name="client-ssid">
+                </div>
                 <br>
+                <div style="display: flex; justify-content: space-around;">
                 <label for="client-password">Password: </label>
                 <input type="password" id="client-password" name="client-password">
+                </div>
                 <br>
               </div>
               <div id="ap-fields" class="hidden">
+                <div style="display: flex; justify-content: space-around;">
                 <label for="ap-ssid">Station AP SSID name: </label>
                 <input type="text" id="ap-ssid" name="ap-ssid">
+                </div>
                 <br>
+                <div style="display: flex; justify-content: space-around;">
                 <label for="ap-password">Password: </label>
                 <input type="password" id="ap-password" name="ap-password">
+                </div>
                 <br>
+                <div style="display: flex; justify-content: space-around;">
                 <label for="ap-channel">Channel: </label>
                 <input type="number" id="ap-channel" name="ap-channel" min="1" max="14">
+                </div>
                 <br>
               </div>
               <button id="save_wifi_sets">Send and save config</button>
