@@ -24,9 +24,7 @@
        grid-gap: 2rem; grid-template-columns: repeat(3, minmax(200px, 1fr));
        grid-auto-rows: minmax(100px, auto); }
     .reading { font-size: 2.4 rem; }
-    .card.mac { color: #0e7c7b; grid-column: span 1; }
-    .card.version { color: #0e7c7b;  grid-column: span 1; }
-    .card.uniq_id { color: #0e7c7b;  grid-column: span 1; }
+    
     .card.stats { color: #0e7c7b; text-align: left; padding: 8px; grid-column: 1 / -1;}
     .stats-text { margin: 2px; }
     .stats-header{ font-size: 1.5rem; margin: 10px;  text-align: center;}
@@ -83,29 +81,51 @@ function toggleFields() {
           <div class="card stats" id="terminal_wifi_settings">
             <details>
             <summary><h4 class="stats-header">Terminal Wi-Fi settings</h4></summary>
-              <label for="mode">Mode: </label>
-              <select id="mode" name="mode" onchange="toggleFields()">
+            <table style="margin-bottom:0px">
+              <tbody>
+                <tr>
+                    <td style=" color: #0e7c7b;" ><label for="mode">Mode: </label></td>
+                    <td><select id="mode" name="mode" onchange="toggleFields()">
                 <option value="client">Client</option>
                 <option value="access_point">Station</option>
-              </select>
-              <br>
+              </select></td>
+            </tr>
+            </tbody>
+            </table>
               <div id="client-fields">
-                <label for="client-ssid">Client SSID name: </label>
-                <input type="text" id="client-ssid" name="client-ssid">
-                <br>
-                <label for="client-password">Password: </label>
-                <input type="password" id="client-password" name="client-password">
+                <table style="margin-top:0px">
+                <tbody>
+                    <tr>
+                        <td style=" color: #0e7c7b;" ><label for="client-ssid">Client SSID name: </label></td>
+                        <td><input type="text" id="client-ssid" name="client-ssid"></td>
+                    </tr>
+                <tr>
+                    <td style=" color: #0e7c7b;" ><label for="client-password">Password: </label></td>
+                    <td><input type="password" id="client-password" name="client-password"></td>
+                </tr>
+                </tbody>
+                </table>
                 <br>
               </div>
               <div id="ap-fields" class="hidden">
-                <label for="ap-ssid">Station AP SSID name: </label>
-                <input type="text" id="ap-ssid" name="ap-ssid">
-                <br>
-                <label for="ap-password">Password: </label>
-                <input type="password" id="ap-password" name="ap-password">
-                <br>
-                <label for="ap-channel">Channel: </label>
-                <input type="number" id="ap-channel" name="ap-channel" min="1" max="14">
+                <table style="margin-top:0px">
+                <tbody>
+                <tr>
+                    <td style=" color: #0e7c7b;" ><label for="ap-ssid">Station AP SSID name: </label>
+                    <td><input type="text" id="ap-ssid" name="ap-ssid">
+                </tr>
+                
+                <tr>
+                    <td style=" color: #0e7c7b;" ><label for="ap-password">Password: </label>
+                    <td><input type="password" id="ap-password" name="ap-password">
+                </tr>
+                
+                <tr>
+                    <td style=" color: #0e7c7b;" ><label for="ap-channel">Channel: </label>
+                    <td><input type="number" id="ap-channel" name="ap-channel" min="1" max="14">
+                </tr>
+                </tbody>
+                </table>
                 <br>
               </div>
               <button id="save_wifi_sets">Send and save config</button>
