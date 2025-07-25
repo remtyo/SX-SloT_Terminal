@@ -28,9 +28,8 @@
     .card.version { color: #0e7c7b;  grid-column: span 1; }
     .card.uniq_id { color: #0e7c7b;  grid-column: span 1; }
     .card.stats { color: #0e7c7b; text-align: left; padding: 8px; grid-column: 1 / -1;}
-    .stats-header { text-align: center; margin: 10px; }
     .stats-text { margin: 2px; }
-    .stats-header{ font-size: 2.0rem; margin: 10px;  text-align: center;}
+    .stats-header{ font-size: 1.5rem; margin: 10px;  text-align: center;}
     h5{ font-size: 1.5rem; margin: 10px; }
     label{ margin: 5px; }
     input{ margin: 5px; }
@@ -41,21 +40,23 @@
     .tle_fill{ height: 60px; display: inline-block;  width: 100%;  text-align: justify;  }
     .hidden { display: none; }
     html {font-family: sans-serif; display: inline-block; text-align: center;}
-    p {  font-size: 1.2rem;}    
+    p {  font-size: 1.2rem;}
+    summary {display: block;}
+    summary::-webkit-details-marker {display: none;}
     </style>
     <script>
-        function toggleFields() {
-            const mode = document.getElementById("mode").value;
-            const clientFields = document.getElementById("client-fields");
-            const apFields = document.getElementById("ap-fields");
-            if (mode === "client") {
-              clientFields.classList.remove("hidden");
-              apFields.classList.add("hidden");
-            } else if (mode === "access_point") {
-              clientFields.classList.add("hidden");
-              apFields.classList.remove("hidden");
-            }
-          };
+function toggleFields() {
+    const mode = document.getElementById("mode").value;
+    const clientFields = document.getElementById("client-fields");
+    const apFields = document.getElementById("ap-fields");
+    if (mode === "client") {
+      clientFields.classList.remove("hidden");
+      apFields.classList.add("hidden");
+    } else if (mode === "access_point") {
+      clientFields.classList.add("hidden");
+      apFields.classList.remove("hidden");
+    }
+  };
     </script>
 </head>
 <body>
@@ -80,7 +81,8 @@
         <div class="cards">
           
           <div class="card stats" id="terminal_wifi_settings">
-            <h4 class="stats-header">Terminal Wi-Fi settings</h4>
+            <details>
+            <summary><h4 class="stats-header">Terminal Wi-Fi settings</h4></summary>
               <label for="mode">Mode: </label>
               <select id="mode" name="mode" onchange="toggleFields()">
                 <option value="client">Client</option>
@@ -108,10 +110,12 @@
               </div>
               <button id="save_wifi_sets">Send and save config</button>
             <div id = wifi_error_log></div>
+            </details>
           </div>
           
           <div class="card stats">
-            <h4 class="stats-header">Settings</h4>
+            <details>
+            <summary><h4 class="stats-header">Settings</h4></summary>
               <label for="uniq_id">ID: </label>
               <input type="number" id="uniq_id" name="uniq_id" min="0" max="255">
             <br>
@@ -119,9 +123,11 @@
             <button id="save_sets">Save config</button>
             <button id="reboot">Reboot</button>
             <div id = sets_error_log></div>
+            </details>
           </div>
           <div class="card stats">
-            <h4 class="stats-header">Add satellite</h4>
+            <details>
+            <summary><h4 class="stats-header">Add satellite</h4></summary>
             <label>TLE:</label>
             <textarea id="tle" type="text"  class="tle_fill" placeholder="callsign and tle" required ></textarea>
             <br>
@@ -129,7 +135,9 @@
             <button id="save_tle_btn" >Save all tle records</button>
             <button id="clear_all_tle_btn" >Clear all tle records</button>
             <div id = tle_error_log></div>
+            </details>
           </div>
+        
         </div>
       </div>
 </body>
