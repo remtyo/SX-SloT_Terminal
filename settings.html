@@ -41,9 +41,22 @@
     .tle_fill{ height: 60px; display: inline-block;  width: 100%;  text-align: justify;  }
     .hidden { display: none; }
     html {font-family: sans-serif; display: inline-block; text-align: center;}
-    p {  font-size: 1.2rem;}
-
+    p {  font-size: 1.2rem;}    
     </style>
+    <script>
+        function toggleFields() {
+            const mode = document.getElementById("mode").value;
+            const clientFields = document.getElementById("client-fields");
+            const apFields = document.getElementById("ap-fields");
+            if (mode === "client") {
+              clientFields.classList.remove("hidden");
+              apFields.classList.add("hidden");
+            } else if (mode === "access_point") {
+              clientFields.classList.add("hidden");
+              apFields.classList.remove("hidden");
+            }
+          };
+    </script>
 </head>
 <body>
     <div class="topnav">
