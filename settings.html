@@ -44,6 +44,20 @@
     summary {display: block;}
     summary::-webkit-details-marker {display: none;}
     </style>
+    <script>
+function toggleFields() {
+    const mode = document.getElementById("mode").value;
+    const clientFields = document.getElementById("client-fields");
+    const apFields = document.getElementById("ap-fields");
+    if (mode === "client") {
+      clientFields.classList.remove("hidden");
+      apFields.classList.add("hidden");
+    } else if (mode === "access_point") {
+      clientFields.classList.add("hidden");
+      apFields.classList.remove("hidden");
+    }
+  };
+    </script>
 </head>
 <body>
     <div class="topnav">
